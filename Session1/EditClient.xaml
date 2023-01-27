@@ -1,0 +1,38 @@
+﻿<Window x:Class="Session1.EditClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Session1"
+        mc:Ignorable="d"
+        Title="Edit" Height="350" Width="270" ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <StackPanel Margin="20, 10">
+        <Label>Фамилия</Label>
+        <TextBox x:Name="LastName" HorizontalAlignment="Left"
+                 Width="160" MaxLength="50"/>
+
+        <Label>Имя</Label>
+        <TextBox x:Name="FirstName" HorizontalAlignment="Left"
+                 Width="160" MaxLength="50"/>
+
+        <Label>Отчество</Label>
+        <TextBox x:Name="Patronymic" HorizontalAlignment="Left"
+                 Width="160" MaxLength="50"/>
+
+        <Label>Номер телефона</Label>
+        <TextBox x:Name="Phone" HorizontalAlignment="Left"
+                 Width="160" MaxLength="11"/>
+
+        <Label>email</Label>
+        <TextBox x:Name="Email" HorizontalAlignment="Left"
+                 Width="160" MaxLength="11"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20, 40">
+            <Button x:Name="btnEdit" Style="{StaticResource Primary Button}"
+                    Content="Изменить" Width="80" Height="25" Click="btnEdit_Click"/>
+            <Button x:Name="btnCancel" Style="{StaticResource Normal Button}"
+                    Content="Отмена" Width="80" Height="25" Margin="10, 0" Click="btnCancel_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
