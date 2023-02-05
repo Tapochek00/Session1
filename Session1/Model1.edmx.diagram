@@ -7,6 +7,7 @@
       <Diagram DiagramId="a46f528429484da2a769b51095dd690c" Name="Diagram1">
         <EntityTypeShape EntityType="Session1Model.Client" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Session1Model.Realtor" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Session1Model.RealEstateObjects" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

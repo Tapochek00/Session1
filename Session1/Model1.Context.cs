@@ -27,5 +27,6 @@ namespace Session1
     
         public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<Realtor> Realtor { get; set; }
+        public virtual DbSet<RealEstateObjects> RealEstateObjects { get; set; }
     }
 }

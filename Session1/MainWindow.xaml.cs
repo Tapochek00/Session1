@@ -36,5 +36,11 @@ namespace Session1
             RealtorMain win = new RealtorMain();
             win.ShowDialog();
         }
+
+        private void RealEstateObjects_Click(object sender, RoutedEventArgs e)
+        {
+            RealEstateObjects win = new RealEstateObjects();
+            win.ShowDialog();
+        }
     }
 }

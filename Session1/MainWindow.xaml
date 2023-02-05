@@ -12,11 +12,17 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnClient" Grid.Column="0" Margin="20"
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnClient" Grid.Column="0" Margin="20" Grid.Row="0"
                 Content="Клиент" Click="btnClient_Click" Style="{StaticResource Primary Button}"/>
 
-        <Button x:Name="btnRealtor" Grid.Column="1" Margin="20" Content="Риэлтор"
+        <Button x:Name="btnRealtor" Grid.Column="1" Margin="20" Content="Риэлтор" Grid.Row="0"
                 Click="btnRealtor_Click" Style="{StaticResource Primary Button}"/>
 
+        <Button x:Name="RealEstateObjects" Grid.ColumnSpan="2" Margin="20" Grid.Row="1" 
+                Content="Объекты недвижимости" Style="{StaticResource Primary Button}" Click="RealEstateObjects_Click"/>
     </Grid>
 </Window>

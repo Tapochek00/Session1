@@ -1,0 +1,71 @@
+﻿<Window x:Class="Session1.EditObject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Session1"
+        mc:Ignorable="d"
+        Title="Edit" Height="350" Width="450" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10, 0">
+            <Label>Город</Label>
+            <TextBox x:Name="City" HorizontalAlignment="Left"
+                     Width="160" MaxLength="50"/>
+
+            <Label>Улица</Label>
+            <TextBox x:Name="Street" HorizontalAlignment="Left"
+                     Width="160" MaxLength="50"/>
+
+            <Label>Дом</Label>
+            <TextBox x:Name="House" HorizontalAlignment="Left"
+                     Width="160" MaxLength="11"/>
+
+            <Label>Номер квартиры</Label>
+            <TextBox x:Name="Number" HorizontalAlignment="Left"
+                     Width="160" MaxLength="11"/>
+
+            <Label>Этаж</Label>
+            <TextBox x:Name="Floor" HorizontalAlignment="Left"
+                    Width="160" MaxLength="11"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Label>Широта</Label>
+            <TextBox x:Name="Coordinate_latitude" HorizontalAlignment="Left"
+                     Width="160" MaxLength="11"/>
+
+            <Label>Долгота</Label>
+            <TextBox x:Name="Coordinate_longitude" HorizontalAlignment="Left"
+                     Width="160" MaxLength="11"/>
+
+            <Label>Площадь</Label>
+            <TextBox x:Name="TotalArea" HorizontalAlignment="Left"
+                     Width="160" MaxLength="11"/>
+
+            <Label>Количество комнат</Label>
+            <TextBox x:Name="Rooms" HorizontalAlignment="Left"
+                     Width="160" MaxLength="11"/>
+
+            <Label>Этажность</Label>
+            <TextBox x:Name="TotalFloors" HorizontalAlignment="Left"
+                 Width="160" MaxLength="11"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" 
+                    Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Center">
+
+            <Button x:Name="btnAdd" Style="{StaticResource Primary Button}"
+                    Content="Добавить" Width="80" Height="25" Click="btnAdd_Click"/>
+            <Button x:Name="btnCancel" Style="{StaticResource Normal Button}"
+                    Content="Отмена" Width="80" Height="25" Margin="10, 0" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
