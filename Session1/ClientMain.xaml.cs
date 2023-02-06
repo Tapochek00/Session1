@@ -73,5 +73,29 @@ namespace Session1
                 }
             }
         }
+
+        private void clientDemands_Click(object sender, RoutedEventArgs e)
+        {
+            int indexRow = clientTable.SelectedIndex;
+            if (indexRow != -1)
+            {
+                Client row = (Client)clientTable.Items[indexRow];
+                Data.Id = row.Id;
+                clientDemands win = new clientDemands();
+                win.ShowDialog();
+            }
+        }
+
+        private void clientSupplies_Click(object sender, RoutedEventArgs e)
+        {
+            int indexRow = clientTable.SelectedIndex;
+            if (indexRow != -1)
+            {
+                Client row = (Client)clientTable.Items[indexRow];
+                Data.Id = row.Id;
+                clientSupplies win = new clientSupplies();
+                win.ShowDialog();
+            }
+        }
     }
 }

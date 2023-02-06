@@ -39,7 +39,19 @@ namespace Session1
 
         private void RealEstateObjects_Click(object sender, RoutedEventArgs e)
         {
-            RealEstateObjects win = new RealEstateObjects();
+            RealEstateObjectsMain win = new RealEstateObjectsMain();
+            win.ShowDialog();
+        }
+
+        private void Supplies_Click(object sender, RoutedEventArgs e)
+        {
+            SuppliesMain win = new SuppliesMain();
+            win.ShowDialog();
+        }
+
+        private void Demands_Click(object sender, RoutedEventArgs e)
+        {
+            DemandsMain win = new DemandsMain();
             win.ShowDialog();
         }
     }

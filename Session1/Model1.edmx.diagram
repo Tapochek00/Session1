@@ -8,6 +8,14 @@
         <EntityTypeShape EntityType="Session1Model.Client" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Session1Model.Realtor" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Session1Model.RealEstateObjects" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Session1Model.Demands" Width="1.5" PointX="8" PointY="0.75" />
+        <EntityTypeShape EntityType="Session1Model.supplies" Width="1.5" PointX="5" PointY="1.75" />
+        <AssociationConnector Association="Session1Model.FK_Demands_Client" />
+        <AssociationConnector Association="Session1Model.FK_supplies_Client" />
+        <AssociationConnector Association="Session1Model.FK_Demands_Realtor" />
+        <AssociationConnector Association="Session1Model.FK_supplies_Realtor" />
+        <EntityTypeShape EntityType="Session1Model.sysdiagrams" Width="1.5" PointX="3.375" PointY="4.875" />
+        <AssociationConnector Association="Session1Model.FK_supplies_RealEstateObjects" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

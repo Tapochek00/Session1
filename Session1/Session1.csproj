@@ -67,28 +67,52 @@
     <Compile Include="AddClient.xaml.cs">
       <DependentUpon>AddClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddDemand.xaml.cs">
+      <DependentUpon>AddDemand.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddObject.xaml.cs">
       <DependentUpon>AddObject.xaml</DependentUpon>
     </Compile>
     <Compile Include="AddRealtor.xaml.cs">
       <DependentUpon>AddRealtor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddSupply.xaml.cs">
+      <DependentUpon>AddSupply.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Client.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="clientDemands.xaml.cs">
+      <DependentUpon>clientDemands.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ClientMain.xaml.cs">
       <DependentUpon>ClientMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="clientSupplies.xaml.cs">
+      <DependentUpon>clientSupplies.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
+    <Compile Include="Demands.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DemandsMain.xaml.cs">
+      <DependentUpon>DemandsMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditClient.xaml.cs">
       <DependentUpon>EditClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditDemand.xaml.cs">
+      <DependentUpon>EditDemand.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditObject.xaml.cs">
       <DependentUpon>EditObject.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditRealtor.xaml.cs">
       <DependentUpon>EditRealtor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditSupply.xaml.cs">
+      <DependentUpon>EditSupply.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
@@ -98,16 +122,35 @@
     <Compile Include="RealEstateObjects.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="RealEstateObjects.xaml.cs">
-      <DependentUpon>RealEstateObjects.xaml</DependentUpon>
+    <Compile Include="RealEstateObjectsMain.xaml.cs">
+      <DependentUpon>RealEstateObjectsMain.xaml</DependentUpon>
     </Compile>
     <Compile Include="Realtor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="realtorDemands.xaml.cs">
+      <DependentUpon>realtorDemands.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RealtorMain.xaml.cs">
       <DependentUpon>RealtorMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="realtorSupplies.xaml.cs">
+      <DependentUpon>realtorSupplies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="supplies.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliesMain.xaml.cs">
+      <DependentUpon>SuppliesMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Page Include="AddClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddDemand.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,11 +162,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddSupply.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="clientDemands.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ClientMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="clientSupplies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DemandsMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EditClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditDemand.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,6 +195,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditRealtor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditSupply.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,11 +214,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RealEstateObjects.xaml">
+    <Page Include="RealEstateObjectsMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="realtorDemands.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RealtorMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="realtorSupplies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuppliesMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

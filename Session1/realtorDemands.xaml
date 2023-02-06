@@ -1,0 +1,30 @@
+﻿<Window x:Class="Session1.realtorDemands"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Session1"
+        mc:Ignorable="d"
+        Title="Demands" Height="250" Width="1000" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="demands" IsReadOnly="True" AutoGenerateColumns="False" VerticalScrollBarVisibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="1.5*" Header="Client" Binding="{Binding ClientId}"/>
+                <DataGridTextColumn Width="3*" Header="Real estate type" Binding="{Binding ObjectType}"/>
+                <DataGridTextColumn Width="*" Header="City" Binding="{Binding Address_City}"/>
+                <DataGridTextColumn Width="1.5*" Header="Street" Binding="{Binding Address_Street}"/>
+                <DataGridTextColumn Width="1.5*" Header="House" Binding="{Binding Address_House}"/>
+                <DataGridTextColumn Width="2*" Header="Number" Binding="{Binding Address_Number}"/>
+                <DataGridTextColumn Width="2*" Header="Min price" Binding="{Binding MinPrice}"/>
+                <DataGridTextColumn Width="2*" Header="Max price" Binding="{Binding MaxPrice}"/>
+                <DataGridTextColumn Width="2*" Header="Min area" Binding="{Binding MinArea}"/>
+                <DataGridTextColumn Width="2*" Header="Max area" Binding="{Binding MaxArea}"/>
+                <DataGridTextColumn Width="2*" Header="Min rooms" Binding="{Binding MinRooms}"/>
+                <DataGridTextColumn Width="2*" Header="Max rooms" Binding="{Binding MaxArea}"/>
+                <DataGridTextColumn Width="2*" Header="Min floor" Binding="{Binding MinFloor}"/>
+                <DataGridTextColumn Width="2*" Header="Max floor" Binding="{Binding MaxFloor}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

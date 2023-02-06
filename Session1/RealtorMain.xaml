@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Session1"
         mc:Ignorable="d"
-        Title="RealtorMain" Height="350" Width="500" ResizeMode="NoResize"
+        Title="RealtorMain" Height="350" Width="666" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
@@ -24,6 +24,8 @@
                     HorizontalAlignment="Center" Grid.Row="1">
             <Button x:Name="btnAdd" Style="{StaticResource Primary Button}" Content="Добавить" Margin="10" Width="80" Height="30" Click="btnAdd_Click"/>
             <Button x:Name="btnEdit" Style="{StaticResource Primary Button}" Content="Изменить" Margin="10" Width="80" Height="30" Click="btnEdit_Click"/>
+            <Button x:Name="agentDemands" Style="{StaticResource Primary Button}" Content="Потребности риэлтора" Margin="10" Width="160" Height="30" Click="agentDemands_Click"/>
+            <Button x:Name="agentSupplies" Style="{StaticResource Primary Button}" Content="Предложения риэлтора" Margin="10" Width="160" Height="30" Click="agentSupplies_Click"/>
             <Button x:Name="btnDelete" Style="{StaticResource Warning Button}" Content="Удалить" Margin="10" Width="80" Height="30" Click="btnDelete_Click"/>
         </StackPanel>
     </Grid>

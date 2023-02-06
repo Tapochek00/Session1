@@ -15,14 +15,24 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnClient" Grid.Column="0" Margin="20" Grid.Row="0"
+        <Button x:Name="btnClient" Grid.Column="0" Margin="10" Grid.Row="0"
                 Content="Клиент" Click="btnClient_Click" Style="{StaticResource Primary Button}"/>
 
-        <Button x:Name="btnRealtor" Grid.Column="1" Margin="20" Content="Риэлтор" Grid.Row="0"
+        <Button x:Name="btnRealtor" Grid.Column="1" Margin="10" Content="Риэлтор" Grid.Row="0"
                 Click="btnRealtor_Click" Style="{StaticResource Primary Button}"/>
 
-        <Button x:Name="RealEstateObjects" Grid.ColumnSpan="2" Margin="20" Grid.Row="1" 
-                Content="Объекты недвижимости" Style="{StaticResource Primary Button}" Click="RealEstateObjects_Click"/>
+        <Button x:Name="RealEstateObjects" Grid.Column="0" Margin="10" Grid.Row="1" 
+                Content="Объекты недвижимости" Style="{StaticResource Primary Button}"
+                Click="RealEstateObjects_Click"/>
+
+        <Button x:Name="Supplies" Grid.Column="1" Margin="10" Grid.Row="1" 
+                Content="Предложение" Style="{StaticResource Primary Button}"
+                Click="Supplies_Click"/>
+
+        <Button x:Name="Demands" Grid.ColumnSpan="2" Margin="10" Grid.Row="2" 
+                Content="Потребность" Style="{StaticResource Primary Button}"
+                Click="Demands_Click"/>
     </Grid>
 </Window>

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Session1
 {
     /// <summary>
-    /// Логика взаимодействия для RealtorMain.xaml
+    /// Логика взаимодействия для DemandsMain.xaml
     /// </summary>
-    public partial class RealtorMain : Window
+    public partial class DemandsMain : Window
     {
-        public RealtorMain()
+        public DemandsMain()
         {
             InitializeComponent();
         }
@@ -28,28 +28,26 @@ namespace Session1
         Context db = Context.GetContext();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            db.Realtor.Load();
-            realtorTable.ItemsSource = db.Realtor.Local.ToBindingList();
+            db.Demands.Load();
+            demands.ItemsSource = db.Demands.Local.ToBindingList();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddRealtor win = new AddRealtor();
-            win.Owner = this;
+            AddDemand win = new AddDemand();
             win.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            int indexRow = realtorTable.SelectedIndex;
+            int indexRow = demands.SelectedIndex;
             if (indexRow != -1)
             {
-                Realtor row = (Realtor)realtorTable.Items[indexRow];
-                Data.Id = row.Id;
-                EditRealtor edit = new EditRealtor();
-                edit.Owner = this;
+                Demands row = (Demands)demands.Items[indexRow];
+                Data.Id = row.id;
+                EditDemand edit = new EditDemand();
                 edit.ShowDialog();
-                realtorTable.Items.Refresh();
+                demands.Items.Refresh();
             }
         }
 
@@ -62,38 +60,14 @@ namespace Session1
             {
                 try
                 {
-                    Realtor row = (Realtor)realtorTable.SelectedItems[0];
-                    db.Realtor.Remove(row);
+                    Demands row = (Demands)demands.SelectedItems[0];
+                    db.Demands.Remove(row);
                     db.SaveChanges();
                 }
                 catch (ArgumentOutOfRangeException)
                 {
                     MessageBox.Show("Выберите запись");
                 }
-            }
-        }
-
-        private void agentDemands_Click(object sender, RoutedEventArgs e)
-        {
-            int indexRow = realtorTable.SelectedIndex;
-            if (indexRow != -1)
-            {
-                Realtor row = (Realtor)realtorTable.Items[indexRow];
-                Data.Id = row.Id;
-                realtorDemands win = new realtorDemands();
-                win.ShowDialog();
-            }
-        }
-
-        private void agentSupplies_Click(object sender, RoutedEventArgs e)
-        {
-            int indexRow = realtorTable.SelectedIndex;
-            if (indexRow != -1)
-            {
-                Realtor row = (Realtor)realtorTable.Items[indexRow];
-                Data.Id = row.Id;
-                realtorSupplies win = new realtorSupplies();
-                win.ShowDialog();
             }
         }
     }

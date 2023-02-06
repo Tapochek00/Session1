@@ -15,19 +15,16 @@ namespace Session1
 using System;
     using System.Collections.Generic;
     
-public partial class RealEstateObjects
+public partial class Demands
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public RealEstateObjects()
-    {
+    public int id { get; set; }
 
-        this.supplies = new HashSet<supplies>();
+    public int AgentId { get; set; }
 
-    }
+    public int ClientId { get; set; }
 
-
-    public int Id { get; set; }
+    public string ObjectType { get; set; }
 
     public string Address_City { get; set; }
 
@@ -37,25 +34,27 @@ public partial class RealEstateObjects
 
     public string Address_Number { get; set; }
 
-    public Nullable<double> Coordinate_latitude { get; set; }
+    public Nullable<int> MinPrice { get; set; }
 
-    public Nullable<double> Coordinate_longitude { get; set; }
+    public Nullable<int> MaxPrice { get; set; }
 
-    public Nullable<double> TotalArea { get; set; }
+    public Nullable<double> MinArea { get; set; }
 
-    public Nullable<int> Rooms { get; set; }
+    public Nullable<double> MaxArea { get; set; }
 
-    public Nullable<int> Floor { get; set; }
+    public Nullable<int> MinRooms { get; set; }
 
-    public Nullable<int> TotalFloors { get; set; }
+    public Nullable<int> MaxRooms { get; set; }
 
-    public string ObjectType { get; set; }
+    public Nullable<int> MinFloor { get; set; }
+
+    public Nullable<int> MaxFloor { get; set; }
 
 
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual Client Client { get; set; }
 
-    public virtual ICollection<supplies> supplies { get; set; }
+    public virtual Realtor Realtor { get; set; }
 
 }
 
