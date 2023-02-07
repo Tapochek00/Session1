@@ -28,9 +28,10 @@ namespace Session1
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var agentDemands = from p in db.Demands
-                                where p.AgentId == Data.Id
-                                select new
-                                {
+                               where p.AgentId == Data.Id
+                               select new
+                               {
+                                    p.id,
                                     p.ClientId,
                                     p.ObjectType,
                                     p.Address_City,

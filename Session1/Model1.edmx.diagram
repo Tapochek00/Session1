@@ -16,6 +16,9 @@
         <AssociationConnector Association="Session1Model.FK_supplies_Realtor" />
         <EntityTypeShape EntityType="Session1Model.sysdiagrams" Width="1.5" PointX="3.375" PointY="4.875" />
         <AssociationConnector Association="Session1Model.FK_supplies_RealEstateObjects" />
+        <EntityTypeShape EntityType="Session1Model.Deals" Width="1.5" PointX="5.375" PointY="6.75" />
+        <AssociationConnector Association="Session1Model.FK_Deals_Demands" />
+        <AssociationConnector Association="Session1Model.FK_Deals_supplies" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

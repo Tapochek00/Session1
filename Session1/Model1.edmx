@@ -16,6 +16,14 @@
           <Property Name="Phone" Type="nvarchar" MaxLength="11" />
           <Property Name="email" Type="nvarchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="Deals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DemandId" Type="int" Nullable="false" />
+          <Property Name="SupplyId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Demands">
           <Key>
             <PropertyRef Name="id" />
@@ -84,6 +92,30 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK_Deals_Demands">
+          <End Role="Demands" Type="Self.Demands" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Demands">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="DemandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deals_supplies">
+          <End Role="supplies" Type="Self.supplies" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="supplies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="SupplyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Demands_Client">
           <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="Demands" Type="Self.Demands" Multiplicity="*" />
@@ -146,11 +178,20 @@
         </Association>
         <EntityContainer Name="Хранилище Session1ModelContainer">
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deals" EntityType="Self.Deals" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Demands" EntityType="Self.Demands" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RealEstateObjects" EntityType="Self.RealEstateObjects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Realtor" EntityType="Self.Realtor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="supplies" EntityType="Self.supplies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Deals_Demands" Association="Self.FK_Deals_Demands">
+            <End Role="Demands" EntitySet="Demands" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deals_supplies" Association="Self.FK_Deals_supplies">
+            <End Role="supplies" EntitySet="supplies" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
           <AssociationSet Name="FK_Demands_Client" Association="Self.FK_Demands_Client">
             <End Role="Client" EntitySet="Client" />
             <End Role="Demands" EntitySet="Demands" />
@@ -228,6 +269,15 @@
             <End Role="RealEstateObjects" EntitySet="RealEstateObjects" />
             <End Role="supplies" EntitySet="supplies" />
           </AssociationSet>
+          <EntitySet Name="Deals" EntityType="Session1Model.Deals" />
+          <AssociationSet Name="FK_Deals_Demands" Association="Session1Model.FK_Deals_Demands">
+            <End Role="Demands" EntitySet="Demands" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deals_supplies" Association="Session1Model.FK_Deals_supplies">
+            <End Role="supplies" EntitySet="supplies" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="RealEstateObjects">
           <Key>
@@ -269,6 +319,7 @@
           <Property Name="MaxFloor" Type="Int32" />
           <NavigationProperty Name="Client" Relationship="Session1Model.FK_Demands_Client" FromRole="Demands" ToRole="Client" />
           <NavigationProperty Name="Realtor" Relationship="Session1Model.FK_Demands_Realtor" FromRole="Demands" ToRole="Realtor" />
+          <NavigationProperty Name="Deals" Relationship="Session1Model.FK_Deals_Demands" FromRole="Demands" ToRole="Deals" />
         </EntityType>
         <EntityType Name="supplies">
           <Key>
@@ -282,6 +333,7 @@
           <NavigationProperty Name="Client" Relationship="Session1Model.FK_supplies_Client" FromRole="supplies" ToRole="Client" />
           <NavigationProperty Name="Realtor" Relationship="Session1Model.FK_supplies_Realtor" FromRole="supplies" ToRole="Realtor" />
           <NavigationProperty Name="RealEstateObjects" Relationship="Session1Model.FK_supplies_RealEstateObjects" FromRole="supplies" ToRole="RealEstateObjects" />
+          <NavigationProperty Name="Deals" Relationship="Session1Model.FK_Deals_supplies" FromRole="supplies" ToRole="Deals" />
         </EntityType>
         <Association Name="FK_Demands_Client">
           <End Type="Session1Model.Client" Role="Client" Multiplicity="1" />
@@ -350,6 +402,40 @@
             </Principal>
             <Dependent Role="supplies">
               <PropertyRef Name="RealEstateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Deals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DemandId" Type="Int32" Nullable="false" />
+          <Property Name="SupplyId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Demands" Relationship="Session1Model.FK_Deals_Demands" FromRole="Deals" ToRole="Demands" />
+          <NavigationProperty Name="supplies" Relationship="Session1Model.FK_Deals_supplies" FromRole="Deals" ToRole="supplies" />
+        </EntityType>
+        <Association Name="FK_Deals_Demands">
+          <End Type="Session1Model.Demands" Role="Demands" Multiplicity="1" />
+          <End Type="Session1Model.Deals" Role="Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Demands">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="DemandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deals_supplies">
+          <End Type="Session1Model.supplies" Role="supplies" Multiplicity="1" />
+          <End Type="Session1Model.Deals" Role="Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="supplies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="SupplyId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -441,6 +527,15 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deals">
+            <EntityTypeMapping TypeName="Session1Model.Deals">
+              <MappingFragment StoreEntitySet="Deals">
+                <ScalarProperty Name="SupplyId" ColumnName="SupplyId" />
+                <ScalarProperty Name="DemandId" ColumnName="DemandId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="Session1.CountCost"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Session1"
+        mc:Ignorable="d"
+        Title="Add" Height="250" Width="270" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="20, 10">
+        <Label>Рассчитать для</Label>
+        <ComboBox x:Name="combo" HorizontalAlignment="Left"
+                 Width="180">
+            <ComboBoxItem Content="Клиент-продавец"/>
+            <ComboBoxItem Content="Клиент-покупатель"/>
+            <ComboBoxItem Content="Риэлтор клиента-продавца"/>
+            <ComboBoxItem Content="Риэлтор клиента-покупателя"/>
+            <ComboBoxItem Content="Размер отчислений компании"/>
+        </ComboBox>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20, 60">
+            <Button x:Name="Count" Style="{StaticResource Primary Button}"
+                    Content="Рассчитать" Width="80" Height="25" Click="Count_Click"/>
+            <Button x:Name="btnCancel" Style="{StaticResource Normal Button}"
+                    Content="Отмена" Width="80" Height="25" Margin="10, 0" Click="btnCancel_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

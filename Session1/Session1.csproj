@@ -67,6 +67,9 @@
     <Compile Include="AddClient.xaml.cs">
       <DependentUpon>AddClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddDeal.xaml.cs">
+      <DependentUpon>AddDeal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddDemand.xaml.cs">
       <DependentUpon>AddDemand.xaml</DependentUpon>
     </Compile>
@@ -92,7 +95,16 @@
     <Compile Include="clientSupplies.xaml.cs">
       <DependentUpon>clientSupplies.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CountCost.xaml.cs">
+      <DependentUpon>CountCost.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
+    <Compile Include="Deals.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DealsMain.xaml.cs">
+      <DependentUpon>DealsMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Demands.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -101,6 +113,9 @@
     </Compile>
     <Compile Include="EditClient.xaml.cs">
       <DependentUpon>EditClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditDeal.xaml.cs">
+      <DependentUpon>EditDeal.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditDemand.xaml.cs">
       <DependentUpon>EditDemand.xaml</DependentUpon>
@@ -150,6 +165,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddDeal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddDemand.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,11 +197,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CountCost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DealsMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DemandsMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditDeal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

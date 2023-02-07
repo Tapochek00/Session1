@@ -15,39 +15,20 @@ namespace Session1
 using System;
     using System.Collections.Generic;
     
-public partial class supplies
+public partial class Deals
 {
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public supplies()
-    {
-
-        this.Deals = new HashSet<Deals>();
-
-    }
-
 
     public int Id { get; set; }
 
-    public int ClientId { get; set; }
+    public int DemandId { get; set; }
 
-    public int AgentId { get; set; }
-
-    public int RealEstateId { get; set; }
-
-    public int Price { get; set; }
+    public int SupplyId { get; set; }
 
 
 
-    public virtual Client Client { get; set; }
+    public virtual Demands Demands { get; set; }
 
-    public virtual Realtor Realtor { get; set; }
-
-    public virtual RealEstateObjects RealEstateObjects { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Deals> Deals { get; set; }
+    public virtual supplies supplies { get; set; }
 
 }
 

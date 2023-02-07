@@ -31,6 +31,7 @@ namespace Session1
                                 where p.ClientId == Data.Id
                                 select new
                                 {
+                                    p.id,
                                     p.AgentId,
                                     p.ObjectType,
                                     p.Address_City,

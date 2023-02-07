@@ -18,6 +18,15 @@ using System;
 public partial class Demands
 {
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Demands()
+    {
+
+        this.Deals = new HashSet<Deals>();
+
+    }
+
+
     public int id { get; set; }
 
     public int AgentId { get; set; }
@@ -55,6 +64,10 @@ public partial class Demands
     public virtual Client Client { get; set; }
 
     public virtual Realtor Realtor { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<Deals> Deals { get; set; }
 
 }
 

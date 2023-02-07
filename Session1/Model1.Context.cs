@@ -44,6 +44,8 @@ public partial class Session1Entities : DbContext
 
     public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
+    public virtual DbSet<Deals> Deals { get; set; }
+
 }
 
 }

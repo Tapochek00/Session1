@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Session1
 {
     /// <summary>
-    /// Логика взаимодействия для SuppliesMain.xaml
+    /// Логика взаимодействия для DealsMain.xaml
     /// </summary>
-    public partial class SuppliesMain : Window
+    public partial class DealsMain : Window
     {
-        public SuppliesMain()
+        public DealsMain()
         {
             InitializeComponent();
         }
@@ -28,26 +28,27 @@ namespace Session1
         Context db = Context.GetContext();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            db.supplies.Load();
-            Supplies.ItemsSource = db.supplies.Local.ToBindingList();
+            db.Deals.Load();
+            DealsTable.ItemsSource = db.Deals.Local.ToBindingList();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddSupply win = new AddSupply();
+            AddDeal win = new AddDeal();
             win.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            int indexRow = Supplies.SelectedIndex;
+            int indexRow = DealsTable.SelectedIndex;
             if (indexRow != -1)
             {
-                supplies row = (supplies)Supplies.Items[indexRow];
+                Deals row = (Deals)DealsTable.Items[indexRow];
                 Data.Id = row.Id;
-                EditSupply edit = new EditSupply();
+                EditDeal edit = new EditDeal();
+                edit.Owner = this;
                 edit.ShowDialog();
-                Supplies.Items.Refresh();
+                DealsTable.Items.Refresh();
             }
         }
 
@@ -60,22 +61,26 @@ namespace Session1
             {
                 try
                 {
-                    supplies row = (supplies)Supplies.SelectedItems[0];
-                    var findInDeals= from p in db.Deals
-                                         where p.SupplyId == row.Id
-                                         select p;
-                    if (!findInDeals.Any())
-                    {
-                        db.supplies.Remove(row);
-                        db.SaveChanges();
-                    }
-                    else MessageBox.Show("Предложение связано со сделкой");
-                    
+                    Deals row = (Deals)DealsTable.SelectedItems[0];
+                    db.Deals.Remove(row);
+                    db.SaveChanges();
                 }
                 catch (ArgumentOutOfRangeException)
                 {
                     MessageBox.Show("Выберите запись");
                 }
+            }
+        }
+
+        private void Cost_Click(object sender, RoutedEventArgs e)
+        {
+            int indexRow = DealsTable.SelectedIndex;
+            if (indexRow != -1)
+            {
+                Deals row = (Deals)DealsTable.Items[indexRow];
+                Data.Id = row.Id;
+                CountCost win = new CountCost();
+                win.ShowDialog();
             }
         }
     }

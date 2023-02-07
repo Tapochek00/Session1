@@ -31,8 +31,12 @@
                 Content="Предложение" Style="{StaticResource Primary Button}"
                 Click="Supplies_Click"/>
 
-        <Button x:Name="Demands" Grid.ColumnSpan="2" Margin="10" Grid.Row="2" 
+        <Button x:Name="Demands" Grid.Column="0" Margin="10" Grid.Row="2" 
                 Content="Потребность" Style="{StaticResource Primary Button}"
                 Click="Demands_Click"/>
+
+        <Button x:Name="DealsBtn" Grid.Column="1" Margin="10" Grid.Row="2" 
+                Content="Сделка" Style="{StaticResource Primary Button}"
+                Click="DealsBtn_Click"/>
     </Grid>
 </Window>

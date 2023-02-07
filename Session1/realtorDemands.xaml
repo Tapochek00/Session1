@@ -10,6 +10,7 @@
     <Grid>
         <DataGrid x:Name="demands" IsReadOnly="True" AutoGenerateColumns="False" VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="№" Binding="{Binding id}"/>
                 <DataGridTextColumn Width="1.5*" Header="Client" Binding="{Binding ClientId}"/>
                 <DataGridTextColumn Width="3*" Header="Real estate type" Binding="{Binding ObjectType}"/>
                 <DataGridTextColumn Width="*" Header="City" Binding="{Binding Address_City}"/>

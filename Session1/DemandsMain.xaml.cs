@@ -61,8 +61,15 @@ namespace Session1
                 try
                 {
                     Demands row = (Demands)demands.SelectedItems[0];
-                    db.Demands.Remove(row);
-                    db.SaveChanges();
+                    var findInDeals = from p in db.Deals
+                                      where p.DemandId == row.id
+                                      select p;
+                    if (!findInDeals.Any())
+                    {
+                        db.Demands.Remove(row);
+                        db.SaveChanges();
+                    }
+                    else MessageBox.Show("Предложение связано со сделкой");
                 }
                 catch (ArgumentOutOfRangeException)
                 {

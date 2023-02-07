@@ -10,6 +10,7 @@
     <Grid>
         <DataGrid x:Name="Supplies" IsReadOnly="True" AutoGenerateColumns="False" VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="№" Binding="{Binding Id}"/>
                 <DataGridTextColumn Width="1.5*" Header="Риэлтор" Binding="{Binding AgentId}"/>
                 <DataGridTextColumn Width="3*" Header="Объект недвижимости" Binding="{Binding RealEstateId}"/>
                 <DataGridTextColumn Width="2*" Header="Цена" Binding="{Binding Price}"/>

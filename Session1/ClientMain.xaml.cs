@@ -70,7 +70,7 @@ namespace Session1
                     var findInDemands = from p in db.Demands
                                          where p.ClientId == row.Id
                                          select p;
-                    if (!findInSupplies.Any())
+                    if (!findInSupplies.Any() && !findInDemands.Any())
                     {
                         db.Client.Remove(row);
                         db.SaveChanges();

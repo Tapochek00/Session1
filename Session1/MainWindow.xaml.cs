@@ -54,5 +54,11 @@ namespace Session1
             DemandsMain win = new DemandsMain();
             win.ShowDialog();
         }
+
+        private void DealsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DealsMain win = new DealsMain();
+            win.ShowDialog();
+        }
     }
 }
