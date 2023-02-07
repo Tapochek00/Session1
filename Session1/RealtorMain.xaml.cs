@@ -63,8 +63,19 @@ namespace Session1
                 try
                 {
                     Realtor row = (Realtor)realtorTable.SelectedItems[0];
-                    db.Realtor.Remove(row);
-                    db.SaveChanges();
+                    var findInSupplies = from p in db.supplies
+                                         where p.AgentId == row.Id
+                                         select p;
+                    var findInDemands = from p in db.Demands
+                                         where p.AgentId == row.Id
+                                         select p;
+                    if (!findInSupplies.Any() && !findInDemands.Any())
+                    {
+                        db.Realtor.Remove(row);
+                        db.SaveChanges();
+                    }
+                    else if (findInDemands.Any()) MessageBox.Show("Риэлтор связан с потребностью");
+                    else MessageBox.Show("Риэлтор связан с предложением");
                 }
                 catch (ArgumentOutOfRangeException)
                 {

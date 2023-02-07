@@ -61,8 +61,15 @@ namespace Session1
                 try
                 {
                     RealEstateObjects row = (RealEstateObjects)objects.SelectedItems[0];
-                    db.RealEstateObjects.Remove(row);
-                    db.SaveChanges();
+                    var findInSupplies = from p in db.supplies
+                                         where p.RealEstateId == row.Id
+                                         select p;
+                    if (!findInSupplies.Any())
+                    {
+                        db.RealEstateObjects.Remove(row);
+                        db.SaveChanges();
+                    }
+                    else MessageBox.Show("Объект недвижимости связан с предложением");
                 }
                 catch (ArgumentOutOfRangeException)
                 {

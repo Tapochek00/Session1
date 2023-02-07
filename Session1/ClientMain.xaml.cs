@@ -64,8 +64,19 @@ namespace Session1
                 try
                 {
                     Client row = (Client)clientTable.SelectedItems[0];
-                    db.Client.Remove(row);
-                    db.SaveChanges();
+                    var findInSupplies = from p in db.supplies
+                                         where p.ClientId == row.Id
+                                         select p;
+                    var findInDemands = from p in db.Demands
+                                         where p.ClientId == row.Id
+                                         select p;
+                    if (!findInSupplies.Any())
+                    {
+                        db.Client.Remove(row);
+                        db.SaveChanges();
+                    }
+                    else if (findInDemands.Any()) MessageBox.Show("Клиент связан с потребностью");
+                    else MessageBox.Show("Клиент связан с предложением");
                 }
                 catch (ArgumentOutOfRangeException)
                 {
