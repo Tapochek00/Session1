@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Session1"
         mc:Ignorable="d"
-        Title="Demands" Height="350" Width="1000" ResizeMode="NoResize"
+        Title="Demands" Height="350" Width="1200" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
@@ -30,6 +30,8 @@
                 <DataGridTextColumn Width="2*" Header="Max rooms" Binding="{Binding MaxArea}"/>
                 <DataGridTextColumn Width="2*" Header="Min floor" Binding="{Binding MinFloor}"/>
                 <DataGridTextColumn Width="2*" Header="Max floor" Binding="{Binding MaxFloor}"/>
+                <DataGridTextColumn Width="2*" Header="Min floors" Binding="{Binding MinTotalFloors}"/>
+                <DataGridTextColumn Width="2*" Header="Max floors" Binding="{Binding MaxTotalFloors}"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center"

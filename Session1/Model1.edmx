@@ -44,6 +44,8 @@
           <Property Name="MaxRooms" Type="int" />
           <Property Name="MinFloor" Type="int" />
           <Property Name="MaxFloor" Type="int" />
+          <Property Name="MinTotalFloors" Type="int" />
+          <Property Name="MaxTotalFloors" Type="int" />
         </EntityType>
         <EntityType Name="RealEstateObjects">
           <Key>
@@ -320,6 +322,8 @@
           <NavigationProperty Name="Client" Relationship="Session1Model.FK_Demands_Client" FromRole="Demands" ToRole="Client" />
           <NavigationProperty Name="Realtor" Relationship="Session1Model.FK_Demands_Realtor" FromRole="Demands" ToRole="Realtor" />
           <NavigationProperty Name="Deals" Relationship="Session1Model.FK_Deals_Demands" FromRole="Demands" ToRole="Deals" />
+          <Property Name="MinTotalFloors" Type="Int32" />
+          <Property Name="MaxTotalFloors" Type="Int32" />
         </EntityType>
         <EntityType Name="supplies">
           <Key>
@@ -489,6 +493,8 @@
           <EntitySetMapping Name="Demands">
             <EntityTypeMapping TypeName="Session1Model.Demands">
               <MappingFragment StoreEntitySet="Demands">
+                <ScalarProperty Name="MaxTotalFloors" ColumnName="MaxTotalFloors" />
+                <ScalarProperty Name="MinTotalFloors" ColumnName="MinTotalFloors" />
                 <ScalarProperty Name="MaxFloor" ColumnName="MaxFloor" />
                 <ScalarProperty Name="MinFloor" ColumnName="MinFloor" />
                 <ScalarProperty Name="MaxRooms" ColumnName="MaxRooms" />

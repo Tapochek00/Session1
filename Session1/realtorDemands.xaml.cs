@@ -45,7 +45,9 @@ namespace Session1
                                     p.MinRooms,
                                     p.MaxRooms,
                                     p.MinFloor,
-                                    p.MaxFloor
+                                    p.MaxFloor,
+                                    p.MinTotalFloors,
+                                    p.MaxTotalFloors
                                 };
             demands.ItemsSource = agentDemands.ToList();
         }

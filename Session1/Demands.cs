@@ -59,6 +59,10 @@ public partial class Demands
 
     public Nullable<int> MaxFloor { get; set; }
 
+    public Nullable<int> MinTotalFloors { get; set; }
+
+    public Nullable<int> MaxTotalFloors { get; set; }
+
 
 
     public virtual Client Client { get; set; }

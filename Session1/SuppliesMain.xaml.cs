@@ -78,5 +78,19 @@ namespace Session1
                 }
             }
         }
+
+        private void SearchDemands_Click(object sender, RoutedEventArgs e)
+        {
+            int indexRow = Supplies.SelectedIndex;
+            if (indexRow != -1)
+            {
+                supplies row = (supplies)Supplies.Items[indexRow];
+                Data.Id = row.Id;
+                SearchDemands edit = new SearchDemands();
+                edit.ShowDialog();
+                Supplies.Items.Refresh();
+            }
+            else MessageBox.Show("Выберите предложение");
+        }
     }
 }

@@ -88,6 +88,8 @@ namespace Session1
                 if (MaxRooms.Text.Length != 0) dem.MaxRooms = int.Parse(MaxRooms.Text);
                 if (MinFloor.Text.Length != 0) dem.MinFloor = int.Parse(MinFloor.Text);
                 if (MinFloor.Text.Length != 0) dem.MaxFloor = int.Parse(MaxFloor.Text);
+                if (MinTotalFloor.Text.Length != 0) dem.MinTotalFloors = int.Parse(MinTotalFloor.Text);
+                if (MaxTotalFloor.Text.Length != 0) dem.MaxTotalFloors = int.Parse(MaxTotalFloor.Text);
 
                 db.SaveChanges();
                 Close();

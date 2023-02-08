@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Session1"
         mc:Ignorable="d"
-        Title="Demands" Height="250" Width="1000" ResizeMode="NoResize"
+        Title="Demands" Height="350" Width="1200" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <DataGrid x:Name="demands" IsReadOnly="True" AutoGenerateColumns="False" VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="*" Header="№" Binding="{Binding Id}"/>
+                <DataGridTextColumn Width="*" Header="№" Binding="{Binding id}"/>
+                <DataGridTextColumn Width="1.5*" Header="Client" Binding="{Binding ClientId}"/>
                 <DataGridTextColumn Width="1.5*" Header="Agent" Binding="{Binding AgentId}"/>
                 <DataGridTextColumn Width="3*" Header="Real estate type" Binding="{Binding ObjectType}"/>
                 <DataGridTextColumn Width="*" Header="City" Binding="{Binding Address_City}"/>
@@ -25,6 +26,8 @@
                 <DataGridTextColumn Width="2*" Header="Max rooms" Binding="{Binding MaxArea}"/>
                 <DataGridTextColumn Width="2*" Header="Min floor" Binding="{Binding MinFloor}"/>
                 <DataGridTextColumn Width="2*" Header="Max floor" Binding="{Binding MaxFloor}"/>
+                <DataGridTextColumn Width="2*" Header="Min floors" Binding="{Binding MinTotalFloors}"/>
+                <DataGridTextColumn Width="2*" Header="Max floors" Binding="{Binding MaxTotalFloors}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
